@@ -1,0 +1,27 @@
+# ---- Dataset (downloaded via scripts/download_data.py, not committed) ----
+data/raw/
+*.log
+*.zip
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# ---- Tooling / OS ----
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Generated artifacts ----
+# results/ is intentionally committed so the README renders with example
+# tables/plots; regenerate them any time with scripts/run_benchmark.py.

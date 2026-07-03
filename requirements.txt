@@ -1,0 +1,8 @@
+# Core dependencies. The classifiers and metrics use only numpy + pandas;
+# matplotlib is used solely for generating result plots.
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.6
+
+# Optional: run the test suite with `pytest -q`
+# pytest>=7.0
