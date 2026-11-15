@@ -1,0 +1,2 @@
+# Keep the published evidence bytes identical to its recorded SHA-256 hashes.
+results/nested/* -text

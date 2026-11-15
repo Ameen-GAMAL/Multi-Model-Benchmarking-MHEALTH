@@ -16,6 +16,8 @@ class GaussianNaiveBayes(BaseClassifier):
     def __init__(self, var_smoothing: float = 1e-9) -> None:
         # A floor added to every variance, mirroring sklearn's var_smoothing,
         # so that near-constant features do not blow up the Gaussian term.
+        if not np.isfinite(var_smoothing) or var_smoothing < 0:
+            raise ValueError("var_smoothing must be finite and nonnegative.")
         self.var_smoothing = var_smoothing
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> "GaussianNaiveBayes":
@@ -29,7 +31,7 @@ class GaussianNaiveBayes(BaseClassifier):
         self.var_ = np.zeros((n_classes, n_features))     # per-class variances
         self.log_prior_ = np.zeros(n_classes)
 
-        epsilon = self.var_smoothing * X.var(axis=0).max()
+        epsilon = max(self.var_smoothing * X.var(axis=0).max(), np.finfo(float).eps)
         for i, c in enumerate(self.classes_):
             Xc = X[y == c]
             self.theta_[i] = Xc.mean(axis=0)

@@ -1,197 +1,69 @@
-# Multi-Model Benchmarking on Time-Series Sensor Data (MHEALTH)
+# From-scratch activity recognition on MHEALTH
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![NumPy](https://img.shields.io/badge/Built%20with-NumPy%20%2B%20Pandas-orange)
-![Made from scratch](https://img.shields.io/badge/Models-from%20scratch-success)
-![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
+[![Benchmark checks](https://github.com/Ameen-GAMAL/Multi-Model-Benchmarking-MHEALTH/actions/workflows/ci.yml/badge.svg)](https://github.com/Ameen-GAMAL/Multi-Model-Benchmarking-MHEALTH/actions/workflows/ci.yml)
 
-Four classic classifiers — **k-Nearest Neighbours, Logistic Regression, Gaussian
-Naive Bayes, and a feed-forward Neural Network** — implemented **from scratch in
-pure NumPy/Pandas** and benchmarked head-to-head on the
-[UCI **MHEALTH**](https://archive.ics.uci.edu/dataset/319/mhealth+dataset)
-wearable-sensor dataset.
+Four classifiers implemented in NumPy predict 12 activities from short windows of 23-channel, 50 Hz wearable-sensor logs. The benchmark compares k-nearest neighbours, multinomial logistic regression, Gaussian naive Bayes, and a feed-forward neural network on people kept separate from model selection and training.
 
-The task — labelling short windows of 23-channel, 50 Hz body-sensor signals with
-one of 12 physical activities — is a **time-structured, multivariate
-classification problem**, structurally analogous to energy load forecasting and
-demand prediction: multiple correlated sensor streams sampled over time, summarised
-into windowed features, then mapped to a target. The goal here is not a single
-"best" model but a controlled comparison of algorithm families and, crucially, of
-the **feature-engineering choices** that move the needle most.
+## Measured results
 
----
+The [full nested run](results/nested/benchmark_results.md) evaluated 5,213 windows from all 10 UCI MHEALTH subjects. In each outer fold, the other nine subjects supplied three grouped development folds for selecting the feature set and hyperparameters. The pipeline that also selected the classifier family chose logistic regression with full features in all ten folds. Its held-out mean macro-F1 was **0.9577**, with a descriptive subject-bootstrap interval of **0.9302–0.9818**.
 
-## Highlights
+[Per-subject scores](results/nested/outer_folds.csv) · [Aggregate JSON](results/nested/summary.json) · [Confusion matrices](results/nested/confusion_matrices.json) · [Run manifest](results/nested/run_manifest.json)
 
-- **Everything from first principles.** Softmax/cross-entropy gradient descent
-  (Logistic Regression + NN backprop), Gaussian probabilistic inference (Naive
-  Bayes), and vectorised distance metrics (KNN) — no scikit-learn. Even the
-  metrics (accuracy, macro-F1, one-vs-rest ROC-AUC via the rank statistic) are
-  hand-implemented.
-- **Honest evaluation.** A **leave-subjects-out** protocol (train and test on
-  *different people*) is the default. A naive random split leaks near-identical,
-  overlapping windows across the partition and inflates every score toward 100%
-  — the code exposes both so the gap is visible.
-- **Feature engineering as a first-class experiment.** A dedicated study
-  quantifies how an 8-statistic-per-channel representation beats a mean-only
-  baseline, isolating the single biggest source of accuracy gains.
+The manifest records the run command, UCI archive and file checksums, fold membership and class counts, candidate scores, model and feature selections, Python and dependency versions, hardware and BLAS settings, the producing source commit and SHA-256, and output hashes.
 
----
+The earlier fixed-split [table](results/benchmark_results.md) and the [feature study](results/feature_engineering_comparison.png) remain available as historical experiments. They describe subjects 8–10 only, and the earlier fit times lack a recorded hardware context.
 
-## Results
+## Run it
 
-Evaluated on held-out **subjects 8, 9, 10** (never seen in training), using
-128-sample windows (2.56 s) with 50% overlap and 8 statistics per sensor channel
-(184 features). Seed = 42.
+Python 3.9–3.12 is covered by the configured CI matrix. From the repository root:
 
-| Model | Accuracy | Macro-F1 | ROC-AUC (OvR) | Fit time |
-|---|---|---|---|---|
-| **Logistic Regression** | **0.985** | **0.986** | 1.000 | 1.5 s |
-| Neural Network | 0.982 | 0.983 | 1.000 | 1.5 s |
-| Naive Bayes | 0.936 | 0.937 | 0.997 | <0.1 s |
-| KNN (k=7, distance-weighted) | 0.896 | 0.890 | 0.964 | <0.1 s |
+```sh
+python -m pip install -c constraints.txt .
+mhealth-download
+mhealth-benchmark
+```
 
-<p align="center">
-  <img src="results/metrics_comparison.png" width="70%" alt="Model comparison bar chart">
-</p>
+The downloader uses the pinned official archive and verifies its size, SHA-256, and exact member list. A separately obtained copy can be passed with `mhealth-download --archive /path/to/mhealth+dataset.zip`. Archive and sensor logs stay in `data/raw/`; generated evidence goes in `results/nested/`. Choose a different `--out-dir` to keep runs side by side.
 
-The best model's confusion matrix is near-diagonal; essentially the only residual
-error is **Climbing stairs** occasionally read as **Walking** — an intuitive
-confusion between two locomotion activities.
+The synthetic workflow exercises the same loader, feature, split, training and artifact code without fetching real data:
 
-<p align="center">
-  <img src="results/confusion_matrix_logistic_regression.png" width="62%" alt="Confusion matrix">
-</p>
+```sh
+mhealth-benchmark --synthetic --inner-folds 2 --timing-repetitions 1
+```
 
-### Feature engineering drove the largest gains
+Without installing the project itself, `python scripts/download_data.py` and `python -m src.benchmark` use the same entry points once dependencies are installed. `make benchmark` and `make smoke` wrap the installed commands where Make is available. `--subjects` can shrink exploratory runs. `--max-per-class` caps only training rows, leaving validation and held-out distributions intact. See `mhealth-benchmark --help` for window, stride, seed, thread and timing controls.
 
-Swapping the mean-only representation (23 features) for the full 8-statistic set
-(184 features) is the highest-impact change in the whole pipeline — worth **+22
-F1 points for the Neural Network and +14 for KNN**. Models that rely on raw
-feature geometry (distance- and gradient-based) benefit most; Naive Bayes, which
-already models per-feature spread, gains the least.
+## Method
 
-| Model | Basic (means only) | Full (8 stats/channel) | Δ Macro-F1 |
-|---|---|---|---|
-| Neural Network | 0.767 | 0.983 | **+0.216** |
-| KNN | 0.752 | 0.890 | **+0.138** |
-| Logistic Regression | 0.893 | 0.986 | +0.093 |
-| Naive Bayes | 0.926 | 0.937 | +0.011 |
+1. Load and validate each sensor log separately. Form 128-sample windows with stride 64 by default. Retain windows with a single activity label and remove null windows.
+2. Compute eight statistics per channel: mean, standard deviation, minimum, maximum, median, range, RMS, and mean absolute deviation. The basic feature set uses the same windows and their mean columns alone.
+3. Hold out every person once. Tune features and model parameters on grouped inner folds among the other people. Each scaler is fit only on the corresponding training windows.
+4. Refit the selected candidates on the outer training fold and score the held-out person. Export per-model results and a separate selection policy that picks the model family using only inner scores.
+5. Weight subjects equally. Bootstrap held-out subjects for the descriptive 95% intervals. Report median and IQR across repeated feature-build, model-fit and model-prediction timings.
 
-<p align="center">
-  <img src="results/feature_engineering_comparison.png" width="70%" alt="Feature engineering comparison">
-</p>
-
-> Numbers are reproducible with `python scripts/run_benchmark.py` (seed 42).
-
----
-
-## Methodology
-
-1. **Load** all 10 subjects' raw `.log` files (~1.2 M samples, 23 sensor channels
-   + label at 50 Hz).
-2. **Window** each subject's stream into 128-sample windows with 50% overlap.
-   Only *pure* windows (a single activity from start to end) are kept, and the
-   null class is dropped.
-3. **Engineer features** — for every window and every channel, compute 8 summary
-   statistics (mean, std, min, max, median, range, RMS energy, mean absolute
-   deviation), giving a 184-dimensional feature vector per window.
-4. **Split** by subject (leave-subjects-out) so evaluation measures
-   generalisation to *new people*, not memorisation of overlapping windows.
-5. **Standardise** features using statistics fit on the training split only.
-6. **Train & evaluate** the four from-scratch models on accuracy, macro-F1 and
-   one-vs-rest ROC-AUC; export a metrics table and plots.
-
-### The models (all `src/models/`)
-
-| Model | Core idea implemented from scratch |
+| Classifier | From-scratch implementation |
 |---|---|
-| `KNNClassifier` | Vectorised pairwise distances via the `‖a−b‖² = ‖a‖²+‖b‖²−2a·b` identity; distance-weighted voting. |
-| `LogisticRegression` | Multinomial softmax regression; full-batch gradient descent on the cross-entropy loss with the clean `Xᵀ(P−Y)` gradient and L2 regularisation. |
-| `GaussianNaiveBayes` | Per-class Gaussian likelihoods with conditional-independence assumption; all maths done in log-space for stability. |
-| `NeuralNetwork` | Configurable ReLU MLP with softmax output, He initialisation, and mini-batch SGD backprop through cached activations. |
+| KNN | Batched vectorized squared Euclidean distances and distance-weighted votes |
+| Logistic regression | Multinomial softmax, cross-entropy, and L2-regularized gradient descent |
+| Gaussian naive Bayes | Class-conditional Gaussians and stable log-space probabilities |
+| Neural network | ReLU layers, He initialization, and minibatch backpropagation |
 
----
+## Development
 
-## Project structure
-
-```
-Multi-Model-Benchmarking-MHEALTH/
-├── src/
-│   ├── data_loader.py        # load logs + sliding-window feature engineering
-│   ├── preprocessing.py      # train/test split, StandardScaler, one-hot
-│   ├── metrics.py            # accuracy, precision/recall/F1, ROC-AUC (from scratch)
-│   └── models/
-│       ├── base.py           # shared fit / predict / predict_proba interface
-│       ├── knn.py
-│       ├── logistic_regression.py
-│       ├── naive_bayes.py
-│       └── neural_network.py
-├── scripts/
-│   ├── download_data.py      # fetch + extract the dataset from UCI
-│   └── run_benchmark.py      # end-to-end benchmark (CLI)
-├── tests/
-│   └── test_models.py        # sanity tests for models + metrics
-├── results/                  # generated tables and plots
-├── data/                     # dataset lives here (git-ignored, see data/README.md)
-├── requirements.txt
-└── LICENSE
+```sh
+python -m pip install -c constraints.txt '.[dev]'
+python -m pytest -q
+ruff check .
+python -m build --wheel
 ```
 
----
+The legacy fixed-split CLI remains under `scripts/run_benchmark.py`; install `.[plots]` for its plots and use an explicit `--out-dir` to avoid replacing the historical examples. Random-window splitting is useful for illustrating overlap leakage and should be treated as a teaching diagnostic. The CI workflow builds the wheel, runs the suite and synthetic benchmark, and prepares a CycloneDX runtime SBOM for tag or manual builds.
 
-## Quickstart
+## Claims and limits
 
-```bash
-# 1. Install dependencies (numpy, pandas, matplotlib)
-pip install -r requirements.txt
+The results describe ten volunteers performing the activities in this dataset. The intervals are descriptive across the observed subjects and reuse overlapping training sets. They do not validate other sensor placement, new populations, free-living activity detection, or clinical use. The model includes the two ECG channels as generic input signals, and the repository excludes raw traces and subject-level sensor exports.
 
-# 2. Download the MHEALTH dataset (~75 MB) into data/raw/
-python scripts/download_data.py
+## Dataset and license
 
-# 3. Run the full benchmark (subject-independent split by default)
-python scripts/run_benchmark.py
-```
-
-Useful flags:
-
-```bash
-# Reproduce the leakage effect of a naive random split
-python scripts/run_benchmark.py --split random
-
-# Faster iteration on a subset of subjects / capped windows per class
-python scripts/run_benchmark.py --subjects 1 2 3 4 5 --max-per-class 300
-
-# Choose your own held-out subjects, skip plots
-python scripts/run_benchmark.py --test-subjects 1 5 10 --no-plots
-```
-
-Run the tests:
-
-```bash
-python tests/test_models.py      # or: pytest -q
-```
-
----
-
-## Notes & limitations
-
-- **Window overlap + random splitting leaks information.** This repo defaults to
-  the honest subject-independent protocol; `--split random` is provided only to
-  demonstrate *why* the naive numbers look "too good."
-- Reported scores are for one fixed held-out set of subjects. For a paper-grade
-  estimate you would wrap the benchmark in full leave-one-subject-out
-  cross-validation and average across folds.
-- The 2-lead ECG channels are included as generic signals; the original authors
-  collected them for future work rather than activity recognition.
-
-## Dataset & citation
-
-> Banos, O., Garcia, R., Holgado-Terriza, J.A., Damas, M., Pomares, H., Rojas, I.,
-> Saez, A., Villalonga, C. **mHealthDroid: a novel framework for agile development
-> of mobile health applications.** IWAAL 2014.
-> — UCI Machine Learning Repository, *MHEALTH Dataset*.
-
-## License
-
-Released under the [MIT License](LICENSE).
+Banos, O., Garcia, R., and Saez, A. (2014). *MHEALTH* [Dataset]. UCI Machine Learning Repository. [Dataset and citation](https://doi.org/10.24432/C5TW22). The dataset is CC BY 4.0. Project code is [MIT](LICENSE). See [data setup](data/README.md), [third-party notices](THIRD_PARTY_NOTICES.md), and [security](SECURITY.md).

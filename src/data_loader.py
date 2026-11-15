@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import glob
 import os
+import re
 
 import numpy as np
 import pandas as pd
@@ -53,7 +54,15 @@ DEFAULT_DATA_DIR = os.path.join("data", "raw", "MHEALTHDATASET")
 # ---------------------------------------------------------------- loading
 def load_subject(path: str) -> pd.DataFrame:
     """Load one ``mHealth_subject*.log`` file into a labelled DataFrame."""
-    df = pd.read_csv(path, sep=r"\s+", header=None, names=COLUMNS)
+    df = pd.read_csv(path, sep=r"\s+", header=None, dtype=float)
+    if df.shape[1] != len(COLUMNS):
+        raise ValueError(f"Expected {len(COLUMNS)} columns in {path!s}; got {df.shape[1]}.")
+    if not np.isfinite(df.to_numpy()).all():
+        raise ValueError(f"Found a missing or non-finite sensor value or label in {path!s}.")
+    df.columns = COLUMNS
+    if not df["label"].isin([0, *ACTIVITY_NAMES]).all():
+        raise ValueError(f"Expected activity labels in 0..12 in {path!s}.")
+    df["label"] = df["label"].astype(int)
     return df
 
 
@@ -64,30 +73,35 @@ def load_raw(data_dir: str = DEFAULT_DATA_DIR, subjects=None) -> pd.DataFrame:
     boundaries.  ``subjects`` is an iterable of integer ids (1..10); ``None``
     loads everyone found in ``data_dir``.
     """
-    paths = sorted(
-        glob.glob(os.path.join(data_dir, "mHealth_subject*.log")),
-        key=_subject_id_from_path,
-    )
-    if not paths:
-        raise FileNotFoundError(
-            f"No 'mHealth_subject*.log' files in {data_dir!r}. "
-            "Run `python scripts/download_data.py` first."
-        )
-
     frames = []
-    for path in paths:
-        sid = _subject_id_from_path(path)
-        if subjects is not None and sid not in set(subjects):
-            continue
+    for sid, path in subject_files(data_dir, subjects):
         df = load_subject(path)
         df["subject"] = sid
         frames.append(df)
     return pd.concat(frames, ignore_index=True)
 
 
-def _subject_id_from_path(path: str) -> int:
-    stem = os.path.basename(path).replace("mHealth_subject", "").replace(".log", "")
-    return int(stem)
+def subject_files(data_dir: str = DEFAULT_DATA_DIR, subjects=None) -> list[tuple[int, str]]:
+    """Return selected logs in subject order, rejecting ambiguous or missing IDs."""
+    paths = glob.glob(os.path.join(data_dir, "mHealth_subject*.log"))
+    found = {}
+    for path in paths:
+        match = re.fullmatch(r"mHealth_subject([0-9]+)\.log", os.path.basename(path))
+        if match is None:
+            continue
+        sid = int(match[1])
+        if sid in found:
+            raise ValueError(f"Multiple input logs identify subject {sid}.")
+        found[sid] = path
+    if not found:
+        raise FileNotFoundError(
+            f"No 'mHealth_subject*.log' files in {data_dir!r}. "
+            "Run `python scripts/download_data.py` first."
+        )
+    wanted = set(found) if subjects is None else set(subjects)
+    if not wanted or wanted - found.keys():
+        raise ValueError(f"No logs for requested subjects: {sorted(wanted - found.keys())}.")
+    return [(sid, found[sid]) for sid in sorted(wanted)]
 
 
 # --------------------------------------------------- feature engineering
@@ -148,14 +162,18 @@ def build_windows(
     window has an unambiguous target.  Returns ``(X, y, groups, names)`` where
     ``groups`` records the source subject of every window.
     """
-    df = load_raw(data_dir, subjects)
+    if window_size < 1 or stride < 1:
+        raise ValueError("Window size and stride must be positive.")
+    if feature_set not in FEATURE_SETS:
+        raise ValueError(f"Unknown feature set: {feature_set!r}.")
     stats = FEATURE_SETS[feature_set]
-
-    win_list, label_list, group_list = [], [], []
-    for sid, sub_df in df.groupby("subject"):
+    feature_parts, label_list, group_list = [], [], []
+    for sid, path in subject_files(data_dir, subjects):
+        sub_df = load_subject(path)
         values = sub_df[SENSOR_COLUMNS].to_numpy(dtype=float)
         labels = sub_df["label"].to_numpy(dtype=int)
         n = len(values)
+        win_list = []
         for start in range(0, n - window_size + 1, stride):
             end = start + window_size
             wl = labels[start:end]
@@ -167,12 +185,13 @@ def build_windows(
                 win_list.append(values[start:end])
                 label_list.append(lab)
                 group_list.append(sid)
+        if win_list:
+            feature_parts.append(_window_features(np.asarray(win_list), stats))
 
-    if not win_list:
+    if not feature_parts:
         raise RuntimeError("No valid windows produced; check window_size/stride.")
 
-    windows = np.asarray(win_list)                 # (n_windows, window_size, 23)
-    X = _window_features(windows, stats)
+    X = np.concatenate(feature_parts)
     y = np.asarray(label_list, dtype=int)
     groups = np.asarray(group_list, dtype=int)
     names = feature_names(feature_set)
@@ -180,7 +199,7 @@ def build_windows(
     if verbose:
         print(
             f"Built {X.shape[0]} windows x {X.shape[1]} features "
-            f"({feature_set}) from {df['subject'].nunique()} subjects; "
+            f"({feature_set}) from {len(np.unique(groups))} subjects; "
             f"{len(np.unique(y))} activity classes."
         )
     return X, y, groups, names
