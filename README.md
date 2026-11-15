@@ -58,7 +58,7 @@ ruff check .
 python -m build --wheel
 ```
 
-The legacy fixed-split CLI remains under `scripts/run_benchmark.py`; install `.[plots]` for its plots and use an explicit `--out-dir` to avoid replacing the historical examples. Random-window splitting is useful for illustrating overlap leakage and should be treated as a teaching diagnostic. The CI workflow builds the wheel, runs the suite and synthetic benchmark, and prepares a CycloneDX runtime SBOM for tag or manual builds.
+The legacy fixed-split CLI remains under `scripts/run_benchmark.py`; install `.[plots]` for its plots and use an explicit `--out-dir` to avoid replacing the historical examples. Random-window splitting is useful for illustrating overlap leakage and should be treated as a teaching diagnostic. The CI workflow builds the wheel, runs the suite and synthetic benchmark, scans Git history for secrets with redacted output, and prepares a CycloneDX runtime SBOM for tag or manual builds.
 
 ## Claims and limits
 

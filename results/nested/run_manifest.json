@@ -1,0 +1,5193 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-11-15T19:29:19.575752+00:00",
+  "command": [
+    "mhealth-benchmark"
+  ],
+  "arguments": [],
+  "parameters": {
+    "data_dir": "data\\raw\\MHEALTHDATASET",
+    "subjects": null,
+    "window_size": 128,
+    "stride": 64,
+    "inner_folds": 3,
+    "max_per_class": null,
+    "seed": 42,
+    "threads": 1,
+    "timing_repetitions": 3,
+    "out_dir": "results\\nested",
+    "synthetic": false
+  },
+  "git": {
+    "commit": "6d11653ad27b219650bca6e0767ba7cf5697d22e",
+    "dirty": false
+  },
+  "source_sha256": "6d7dbcf1ce288828b5a30bc96819806ff5a94102e8f171da1b7f4a6df1ac98e6",
+  "dataset": {
+    "kind": "uci_mhealth",
+    "archive": {
+      "collection": "UCI MHEALTH (dataset 319, published 2014)",
+      "doi": "https://doi.org/10.24432/C5TW22",
+      "license": "CC BY 4.0",
+      "url": "https://archive.ics.uci.edu/static/public/319/mhealth+dataset.zip",
+      "archive_sha256": "16ad0ce709f3f00df18f348610d15bce0884b79e2143f57f446493673f02b8e0",
+      "archive_bytes": 75567983
+    },
+    "files": [
+      {
+        "subject": 1,
+        "file": "mHealth_subject1.log",
+        "sha256": "da8d1bbf644a206886333f945a1dd7fe5081382b3bb3ee42821f08ad765732e4",
+        "bytes": 30019680
+      },
+      {
+        "subject": 2,
+        "file": "mHealth_subject2.log",
+        "sha256": "20e288750fe9f4f0495686fabf1500bfe655a549f0d2c3a9be5aa6456461b8f1",
+        "bytes": 24446574
+      },
+      {
+        "subject": 3,
+        "file": "mHealth_subject3.log",
+        "sha256": "90ead135c9fa9f1188e3b1f7afc0c95899a0614a15917cf3590f52923d6e03fd",
+        "bytes": 22788438
+      },
+      {
+        "subject": 4,
+        "file": "mHealth_subject4.log",
+        "sha256": "3b66f87a292f4cc457aea18cb7e15a10c18055c803df27f5284c6a1c5751a469",
+        "bytes": 21833916
+      },
+      {
+        "subject": 5,
+        "file": "mHealth_subject5.log",
+        "sha256": "380e526a85bde64baebd1d1a2478c4cfad947a4ab994c8b39b8dcda195f78a30",
+        "bytes": 22285024
+      },
+      {
+        "subject": 6,
+        "file": "mHealth_subject6.log",
+        "sha256": "4b8bc81186229e096937f37f9ae070017ee653005b21f88fcd0504e9195f8926",
+        "bytes": 18243582
+      },
+      {
+        "subject": 7,
+        "file": "mHealth_subject7.log",
+        "sha256": "5e372b2fad64a3ebaadd103ec09cde68d448ef5b707b010d02f438b8b9203b1f",
+        "bytes": 19460454
+      },
+      {
+        "subject": 8,
+        "file": "mHealth_subject8.log",
+        "sha256": "c6ddb8926be4c193890a28cc84cafe35c16a4bc14f23c3e696d504643652a61b",
+        "bytes": 24087426
+      },
+      {
+        "subject": 9,
+        "file": "mHealth_subject9.log",
+        "sha256": "fa68f90a9dfeda47abce41ebc1dec8ce55f66dc56d513ab90a6ae20ad045f2c9",
+        "bytes": 25148835
+      },
+      {
+        "subject": 10,
+        "file": "mHealth_subject10.log",
+        "sha256": "382d3d7b58e1fe24679fb241fd7e48ce1992757f6b1b237a56cd660e8f1fabda",
+        "bytes": 18500501
+      }
+    ]
+  },
+  "class_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "feature_order": {
+    "basic": [
+      "chest_acc_x_mean",
+      "chest_acc_y_mean",
+      "chest_acc_z_mean",
+      "ecg_lead_1_mean",
+      "ecg_lead_2_mean",
+      "ankle_acc_x_mean",
+      "ankle_acc_y_mean",
+      "ankle_acc_z_mean",
+      "ankle_gyro_x_mean",
+      "ankle_gyro_y_mean",
+      "ankle_gyro_z_mean",
+      "ankle_mag_x_mean",
+      "ankle_mag_y_mean",
+      "ankle_mag_z_mean",
+      "arm_acc_x_mean",
+      "arm_acc_y_mean",
+      "arm_acc_z_mean",
+      "arm_gyro_x_mean",
+      "arm_gyro_y_mean",
+      "arm_gyro_z_mean",
+      "arm_mag_x_mean",
+      "arm_mag_y_mean",
+      "arm_mag_z_mean"
+    ],
+    "full": [
+      "chest_acc_x_mean",
+      "chest_acc_x_std",
+      "chest_acc_x_min",
+      "chest_acc_x_max",
+      "chest_acc_x_median",
+      "chest_acc_x_range",
+      "chest_acc_x_rms",
+      "chest_acc_x_mad",
+      "chest_acc_y_mean",
+      "chest_acc_y_std",
+      "chest_acc_y_min",
+      "chest_acc_y_max",
+      "chest_acc_y_median",
+      "chest_acc_y_range",
+      "chest_acc_y_rms",
+      "chest_acc_y_mad",
+      "chest_acc_z_mean",
+      "chest_acc_z_std",
+      "chest_acc_z_min",
+      "chest_acc_z_max",
+      "chest_acc_z_median",
+      "chest_acc_z_range",
+      "chest_acc_z_rms",
+      "chest_acc_z_mad",
+      "ecg_lead_1_mean",
+      "ecg_lead_1_std",
+      "ecg_lead_1_min",
+      "ecg_lead_1_max",
+      "ecg_lead_1_median",
+      "ecg_lead_1_range",
+      "ecg_lead_1_rms",
+      "ecg_lead_1_mad",
+      "ecg_lead_2_mean",
+      "ecg_lead_2_std",
+      "ecg_lead_2_min",
+      "ecg_lead_2_max",
+      "ecg_lead_2_median",
+      "ecg_lead_2_range",
+      "ecg_lead_2_rms",
+      "ecg_lead_2_mad",
+      "ankle_acc_x_mean",
+      "ankle_acc_x_std",
+      "ankle_acc_x_min",
+      "ankle_acc_x_max",
+      "ankle_acc_x_median",
+      "ankle_acc_x_range",
+      "ankle_acc_x_rms",
+      "ankle_acc_x_mad",
+      "ankle_acc_y_mean",
+      "ankle_acc_y_std",
+      "ankle_acc_y_min",
+      "ankle_acc_y_max",
+      "ankle_acc_y_median",
+      "ankle_acc_y_range",
+      "ankle_acc_y_rms",
+      "ankle_acc_y_mad",
+      "ankle_acc_z_mean",
+      "ankle_acc_z_std",
+      "ankle_acc_z_min",
+      "ankle_acc_z_max",
+      "ankle_acc_z_median",
+      "ankle_acc_z_range",
+      "ankle_acc_z_rms",
+      "ankle_acc_z_mad",
+      "ankle_gyro_x_mean",
+      "ankle_gyro_x_std",
+      "ankle_gyro_x_min",
+      "ankle_gyro_x_max",
+      "ankle_gyro_x_median",
+      "ankle_gyro_x_range",
+      "ankle_gyro_x_rms",
+      "ankle_gyro_x_mad",
+      "ankle_gyro_y_mean",
+      "ankle_gyro_y_std",
+      "ankle_gyro_y_min",
+      "ankle_gyro_y_max",
+      "ankle_gyro_y_median",
+      "ankle_gyro_y_range",
+      "ankle_gyro_y_rms",
+      "ankle_gyro_y_mad",
+      "ankle_gyro_z_mean",
+      "ankle_gyro_z_std",
+      "ankle_gyro_z_min",
+      "ankle_gyro_z_max",
+      "ankle_gyro_z_median",
+      "ankle_gyro_z_range",
+      "ankle_gyro_z_rms",
+      "ankle_gyro_z_mad",
+      "ankle_mag_x_mean",
+      "ankle_mag_x_std",
+      "ankle_mag_x_min",
+      "ankle_mag_x_max",
+      "ankle_mag_x_median",
+      "ankle_mag_x_range",
+      "ankle_mag_x_rms",
+      "ankle_mag_x_mad",
+      "ankle_mag_y_mean",
+      "ankle_mag_y_std",
+      "ankle_mag_y_min",
+      "ankle_mag_y_max",
+      "ankle_mag_y_median",
+      "ankle_mag_y_range",
+      "ankle_mag_y_rms",
+      "ankle_mag_y_mad",
+      "ankle_mag_z_mean",
+      "ankle_mag_z_std",
+      "ankle_mag_z_min",
+      "ankle_mag_z_max",
+      "ankle_mag_z_median",
+      "ankle_mag_z_range",
+      "ankle_mag_z_rms",
+      "ankle_mag_z_mad",
+      "arm_acc_x_mean",
+      "arm_acc_x_std",
+      "arm_acc_x_min",
+      "arm_acc_x_max",
+      "arm_acc_x_median",
+      "arm_acc_x_range",
+      "arm_acc_x_rms",
+      "arm_acc_x_mad",
+      "arm_acc_y_mean",
+      "arm_acc_y_std",
+      "arm_acc_y_min",
+      "arm_acc_y_max",
+      "arm_acc_y_median",
+      "arm_acc_y_range",
+      "arm_acc_y_rms",
+      "arm_acc_y_mad",
+      "arm_acc_z_mean",
+      "arm_acc_z_std",
+      "arm_acc_z_min",
+      "arm_acc_z_max",
+      "arm_acc_z_median",
+      "arm_acc_z_range",
+      "arm_acc_z_rms",
+      "arm_acc_z_mad",
+      "arm_gyro_x_mean",
+      "arm_gyro_x_std",
+      "arm_gyro_x_min",
+      "arm_gyro_x_max",
+      "arm_gyro_x_median",
+      "arm_gyro_x_range",
+      "arm_gyro_x_rms",
+      "arm_gyro_x_mad",
+      "arm_gyro_y_mean",
+      "arm_gyro_y_std",
+      "arm_gyro_y_min",
+      "arm_gyro_y_max",
+      "arm_gyro_y_median",
+      "arm_gyro_y_range",
+      "arm_gyro_y_rms",
+      "arm_gyro_y_mad",
+      "arm_gyro_z_mean",
+      "arm_gyro_z_std",
+      "arm_gyro_z_min",
+      "arm_gyro_z_max",
+      "arm_gyro_z_median",
+      "arm_gyro_z_range",
+      "arm_gyro_z_rms",
+      "arm_gyro_z_mad",
+      "arm_mag_x_mean",
+      "arm_mag_x_std",
+      "arm_mag_x_min",
+      "arm_mag_x_max",
+      "arm_mag_x_median",
+      "arm_mag_x_range",
+      "arm_mag_x_rms",
+      "arm_mag_x_mad",
+      "arm_mag_y_mean",
+      "arm_mag_y_std",
+      "arm_mag_y_min",
+      "arm_mag_y_max",
+      "arm_mag_y_median",
+      "arm_mag_y_range",
+      "arm_mag_y_rms",
+      "arm_mag_y_mad",
+      "arm_mag_z_mean",
+      "arm_mag_z_std",
+      "arm_mag_z_min",
+      "arm_mag_z_max",
+      "arm_mag_z_median",
+      "arm_mag_z_range",
+      "arm_mag_z_rms",
+      "arm_mag_z_mad"
+    ]
+  },
+  "sample_count": 5213,
+  "candidate_space": {
+    "KNN": [
+      {
+        "k": 1
+      },
+      {
+        "k": 7
+      }
+    ],
+    "Logistic Regression": [
+      {
+        "lr": 0.35,
+        "n_iters": 220,
+        "l2": 0.001
+      },
+      {
+        "lr": 0.35,
+        "n_iters": 350,
+        "l2": 0.0001
+      }
+    ],
+    "Naive Bayes": [
+      {
+        "var_smoothing": 1e-09
+      },
+      {
+        "var_smoothing": 0.0001
+      }
+    ],
+    "Neural Network": [
+      {
+        "hidden_layers": [
+          48
+        ],
+        "n_epochs": 20
+      },
+      {
+        "hidden_layers": [
+          64,
+          32
+        ],
+        "n_epochs": 30
+      }
+    ]
+  },
+  "selection": "Mean inner-fold macro-F1, fixed class order, first declared candidate on exact ties",
+  "outer": "Leave one subject out. Repetitions time the same fixed-seed fit and predictions.",
+  "bootstrap": {
+    "unit": "outer held-out subject",
+    "replicates": 2000,
+    "interval": "percentile 95%"
+  },
+  "cycles": [
+    {
+      "held_out_subject": 1,
+      "outer_train": {
+        "subjects": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4678,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 381,
+          "7": 396,
+          "8": 392,
+          "9": 423,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          1
+        ],
+        "windows": 535,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 47,
+          "7": 47,
+          "8": 51,
+          "9": 46,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              3,
+              4,
+              6,
+              7,
+              8,
+              10
+            ],
+            "windows": 3097,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 248,
+              "7": 259,
+              "8": 254,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              5,
+              9
+            ],
+            "windows": 1581,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 133,
+              "7": 137,
+              "8": 138,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              7,
+              9,
+              10
+            ],
+            "windows": 3147,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 266,
+              "7": 271,
+              "8": 271,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              4,
+              6,
+              8
+            ],
+            "windows": 1531,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 115,
+              "7": 125,
+              "8": 121,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              2,
+              4,
+              5,
+              6,
+              8,
+              9
+            ],
+            "windows": 3112,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 248,
+              "7": 262,
+              "8": 259,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              7,
+              10
+            ],
+            "windows": 1566,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 133,
+              "7": 134,
+              "8": 133,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8178167578951628,
+            0.6488994250862362,
+            0.7769100663319387
+          ],
+          "mean_f1_macro": 0.7478754164377793
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.7941183546740188,
+            0.6838373873300237,
+            0.837242565593724
+          ],
+          "mean_f1_macro": 0.7717327691992555
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.836682201977074,
+            0.8155862769356673,
+            0.9885662930966381
+          ],
+          "mean_f1_macro": 0.8802782573364598
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8439600195881796,
+            0.811811532261055,
+            0.984435836094728
+          ],
+          "mean_f1_macro": 0.8800691293146542
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.7628851898987467,
+            0.7675961556570722,
+            0.8173573043191249
+          ],
+          "mean_f1_macro": 0.7826128832916478
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.7907824427547748,
+            0.7749823689186242,
+            0.8225321700207204
+          ],
+          "mean_f1_macro": 0.7960989938980397
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9236485042166339,
+            0.8809633208622127,
+            0.9964274748738355
+          ],
+          "mean_f1_macro": 0.933679766650894
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9270928042255245,
+            0.8835235425382485,
+            0.9958360047814142
+          ],
+          "mean_f1_macro": 0.9354841171817291
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.942358559325018,
+            0.7928276439318999,
+            0.9230985906476116
+          ],
+          "mean_f1_macro": 0.8860949313015097
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9532633604254498,
+            0.7927391849972939,
+            0.9205624067457853
+          ],
+          "mean_f1_macro": 0.8888549840561764
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8924813872935001,
+            0.7972986926161673,
+            0.9536550338128142
+          ],
+          "mean_f1_macro": 0.8811450379074938
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8836277407506311,
+            0.7993269229856667,
+            0.9642044565209974
+          ],
+          "mean_f1_macro": 0.8823863734190983
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.777890235356601,
+            0.7577079541840371,
+            0.8319553955992145
+          ],
+          "mean_f1_macro": 0.7891845283799509
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.8192176269447765,
+            0.7849883352686874,
+            0.7205228071285738
+          ],
+          "mean_f1_macro": 0.7749095897806791
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.910489275682656,
+            0.874846069318791,
+            0.9659797030958082
+          ],
+          "mean_f1_macro": 0.9171050160324183
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9474017039402596,
+            0.8589712283286643,
+            0.9724016944967181
+          ],
+          "mean_f1_macro": 0.9262582089218806
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 2,
+      "outer_train": {
+        "subjects": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4671,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 380,
+          "7": 392,
+          "8": 391,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          2
+        ],
+        "windows": 542,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 48,
+          "7": 51,
+          "8": 52,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              3,
+              4,
+              6,
+              7,
+              8,
+              10
+            ],
+            "windows": 3097,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 248,
+              "7": 259,
+              "8": 254,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              5,
+              9
+            ],
+            "windows": 1574,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 132,
+              "7": 133,
+              "8": 137,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              5,
+              7,
+              9,
+              10
+            ],
+            "windows": 3140,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 265,
+              "7": 267,
+              "8": 270,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              4,
+              6,
+              8
+            ],
+            "windows": 1531,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 115,
+              "7": 125,
+              "8": 121,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              4,
+              5,
+              6,
+              8,
+              9
+            ],
+            "windows": 3105,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 247,
+              "7": 258,
+              "8": 258,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              7,
+              10
+            ],
+            "windows": 1566,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 133,
+              "7": 134,
+              "8": 133,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.812828342186266,
+            0.62907121641389,
+            0.8006621217754041
+          ],
+          "mean_f1_macro": 0.7475205601251868
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.790402102735749,
+            0.6665059537544208,
+            0.8306385049969788
+          ],
+          "mean_f1_macro": 0.7625155204957162
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8331633424008692,
+            0.8156671027297081,
+            0.9897908949822195
+          ],
+          "mean_f1_macro": 0.8795404467042656
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8373101387994808,
+            0.8302556154981057,
+            0.9856210599395857
+          ],
+          "mean_f1_macro": 0.8843956047457241
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.812103168534653,
+            0.7536796056686471,
+            0.8326728887867496
+          ],
+          "mean_f1_macro": 0.7994852209966833
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8406697161773561,
+            0.7658346253232337,
+            0.8375133883948761
+          ],
+          "mean_f1_macro": 0.814672576631822
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9338097484614337,
+            0.884962800328601,
+            0.9690512581183134
+          ],
+          "mean_f1_macro": 0.9292746023027827
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9337734974580756,
+            0.8855741934844241,
+            0.9690512581183134
+          ],
+          "mean_f1_macro": 0.9294663163536043
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9401874740991608,
+            0.7761276753948353,
+            0.8903794504334736
+          ],
+          "mean_f1_macro": 0.8688981999758232
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9466564794914096,
+            0.7779032228833906,
+            0.8898339546477839
+          ],
+          "mean_f1_macro": 0.8714645523408614
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8658182625441425,
+            0.7948115884943202,
+            0.9415363193489433
+          ],
+          "mean_f1_macro": 0.8673887234624686
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8498840119483667,
+            0.8124993716753578,
+            0.961885629239218
+          ],
+          "mean_f1_macro": 0.8747563376209809
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7865056793954679,
+            0.7404395998088923,
+            0.8469300888353043
+          ],
+          "mean_f1_macro": 0.7912917893465549
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.7949724151987246,
+            0.7658885246825188,
+            0.7538329446331283
+          ],
+          "mean_f1_macro": 0.7715646281714572
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9111630752693737,
+            0.8739728752128547,
+            0.9330349331458585
+          ],
+          "mean_f1_macro": 0.9060569612093623
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9423573982195848,
+            0.85040737416187,
+            0.9672589669086434
+          ],
+          "mean_f1_macro": 0.9200079130966995
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 3,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4675,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 379,
+          "7": 392,
+          "8": 396,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          3
+        ],
+        "windows": 538,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 49,
+          "7": 51,
+          "8": 47,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              4,
+              6,
+              7,
+              8,
+              10
+            ],
+            "windows": 3101,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 247,
+              "7": 259,
+              "8": 259,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              5,
+              9
+            ],
+            "windows": 1574,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 132,
+              "7": 133,
+              "8": 137,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              5,
+              7,
+              9,
+              10
+            ],
+            "windows": 3144,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 264,
+              "7": 267,
+              "8": 275,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              4,
+              6,
+              8
+            ],
+            "windows": 1531,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 115,
+              "7": 125,
+              "8": 121,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              4,
+              5,
+              6,
+              8,
+              9
+            ],
+            "windows": 3105,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 247,
+              "7": 258,
+              "8": 258,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              7,
+              10
+            ],
+            "windows": 1570,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 132,
+              "7": 134,
+              "8": 138,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8002151755168668,
+            0.6396000162148836,
+            0.728781268311946
+          ],
+          "mean_f1_macro": 0.7228654866812322
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.791720667062204,
+            0.688377644982919,
+            0.7650977005133769
+          ],
+          "mean_f1_macro": 0.7483986708528333
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.87419847144122,
+            0.8311412021389506,
+            0.9675415215914106
+          ],
+          "mean_f1_macro": 0.8909603983905271
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.875674578332716,
+            0.8232186748795329,
+            0.9671438847140726
+          ],
+          "mean_f1_macro": 0.8886790459754406
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.8503522140968993,
+            0.7575462650459656,
+            0.7447396317028371
+          ],
+          "mean_f1_macro": 0.7842127036152341
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8614635714708473,
+            0.7639797953918918,
+            0.7526142965288756
+          ],
+          "mean_f1_macro": 0.7926858877972048
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9679458367159866,
+            0.872311065556651,
+            0.9464283708908959
+          ],
+          "mean_f1_macro": 0.9288950910545112
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9703935430807671,
+            0.8812418732104969,
+            0.9458767761427785
+          ],
+          "mean_f1_macro": 0.9325040641446809
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.928256563415128,
+            0.7925541700751176,
+            0.8787601190101769
+          ],
+          "mean_f1_macro": 0.8665236175001408
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.928256563415128,
+            0.7936570600003793,
+            0.8781557641365617
+          ],
+          "mean_f1_macro": 0.8666897958506897
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.926173834324595,
+            0.8315425287092527,
+            0.9104393619816841
+          ],
+          "mean_f1_macro": 0.8893852416718439
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9422202665540249,
+            0.8327723035770521,
+            0.9230022886408463
+          ],
+          "mean_f1_macro": 0.8993316195906411
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.8244020622647277,
+            0.7417359648328855,
+            0.7815078311439724
+          ],
+          "mean_f1_macro": 0.7825486194138618
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.8607617907190638,
+            0.7408686518563751,
+            0.6472384037065502
+          ],
+          "mean_f1_macro": 0.749622948760663
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.950991457783699,
+            0.8756767060278462,
+            0.8973101698976128
+          ],
+          "mean_f1_macro": 0.9079927779030527
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9680645555177999,
+            0.8394088528749878,
+            0.9617651617960092
+          ],
+          "mean_f1_macro": 0.9230795233962658
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 4,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4676,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 378,
+          "7": 394,
+          "8": 396,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          4
+        ],
+        "windows": 537,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 50,
+          "7": 49,
+          "8": 47,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              6,
+              7,
+              8,
+              10
+            ],
+            "windows": 3102,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 246,
+              "7": 261,
+              "8": 259,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              5,
+              9
+            ],
+            "windows": 1574,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 132,
+              "7": 133,
+              "8": 137,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              5,
+              7,
+              9,
+              10
+            ],
+            "windows": 3144,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 264,
+              "7": 267,
+              "8": 275,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              6,
+              8
+            ],
+            "windows": 1532,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 114,
+              "7": 127,
+              "8": 121,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              5,
+              6,
+              8,
+              9
+            ],
+            "windows": 3106,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 246,
+              "7": 260,
+              "8": 258,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              7,
+              10
+            ],
+            "windows": 1570,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 132,
+              "7": 134,
+              "8": 138,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8348134854154892,
+            0.6426190984019718,
+            0.7564746475661798
+          ],
+          "mean_f1_macro": 0.7446357437945469
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8232652908935046,
+            0.6978019433093069,
+            0.7788531166754971
+          ],
+          "mean_f1_macro": 0.7666401169594362
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8812870274086126,
+            0.801029046981444,
+            0.9517380397397252
+          ],
+          "mean_f1_macro": 0.8780180380432605
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8945177555097956,
+            0.7961973890393229,
+            0.9500741161521744
+          ],
+          "mean_f1_macro": 0.880263086900431
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.837081665268689,
+            0.7409174803147248,
+            0.7538451876185436
+          ],
+          "mean_f1_macro": 0.7772814444006525
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8400887185176353,
+            0.7480031150928471,
+            0.7603689286561619
+          ],
+          "mean_f1_macro": 0.7828202540888815
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9637638619539183,
+            0.8529824325509939,
+            0.973155252426899
+          ],
+          "mean_f1_macro": 0.9299671823106038
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.965580231035327,
+            0.8536022824999406,
+            0.9707834250570015
+          ],
+          "mean_f1_macro": 0.929988646197423
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9333188560261786,
+            0.7640079459299017,
+            0.885736001215411
+          ],
+          "mean_f1_macro": 0.861020934390497
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9458334913929666,
+            0.7652084900833723,
+            0.8828560660293729
+          ],
+          "mean_f1_macro": 0.8646326825019038
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9170314681231008,
+            0.8461806370168722,
+            0.8671181603464354
+          ],
+          "mean_f1_macro": 0.876776755162136
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9254417013586475,
+            0.8569449739469078,
+            0.8952460789823419
+          ],
+          "mean_f1_macro": 0.892544251429299
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.8132032546369697,
+            0.7159820946655917,
+            0.777721056836234
+          ],
+          "mean_f1_macro": 0.7689688020462652
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.88433648420519,
+            0.7287627615704401,
+            0.6763100386655939
+          ],
+          "mean_f1_macro": 0.7631364281470746
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9677287046746864,
+            0.8511160309058391,
+            0.87684325408322
+          ],
+          "mean_f1_macro": 0.8985626632212486
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9639763892398423,
+            0.8386789647557061,
+            0.9718660757028014
+          ],
+          "mean_f1_macro": 0.9248404765661166
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 5,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4696,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 386,
+          "7": 400,
+          "8": 402,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          5
+        ],
+        "windows": 517,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 42,
+          "7": 43,
+          "8": 41,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              6,
+              7,
+              8,
+              10
+            ],
+            "windows": 3102,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 246,
+              "7": 261,
+              "8": 259,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              9
+            ],
+            "windows": 1594,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 140,
+              "7": 139,
+              "8": 143,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              7,
+              9,
+              10
+            ],
+            "windows": 3164,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 272,
+              "7": 273,
+              "8": 281,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              6,
+              8
+            ],
+            "windows": 1532,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 114,
+              "7": 127,
+              "8": 121,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              6,
+              8,
+              9
+            ],
+            "windows": 3126,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 254,
+              "7": 266,
+              "8": 264,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              7,
+              10
+            ],
+            "windows": 1570,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 132,
+              "7": 134,
+              "8": 138,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8767308462686637,
+            0.622103514955391,
+            0.7735461543425192
+          ],
+          "mean_f1_macro": 0.7574601718555246
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8572803485253657,
+            0.6851454977850242,
+            0.7476518200986799
+          ],
+          "mean_f1_macro": 0.7633592221363567
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.915193720017916,
+            0.7678690824011277,
+            0.9236378353298157
+          ],
+          "mean_f1_macro": 0.8689002125829531
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.9129218681488149,
+            0.7845918150503172,
+            0.9345282389790248
+          ],
+          "mean_f1_macro": 0.877347307392719
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.8346761956696543,
+            0.7349991200193525,
+            0.660906789127196
+          ],
+          "mean_f1_macro": 0.7435273682720677
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8270060967231133,
+            0.7368126065203734,
+            0.6687301925026844
+          ],
+          "mean_f1_macro": 0.7441829652487236
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9502706704116352,
+            0.7852198546047996,
+            0.9356418824642224
+          ],
+          "mean_f1_macro": 0.8903774691602191
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9526171774235723,
+            0.7892684092685885,
+            0.9345156592397784
+          ],
+          "mean_f1_macro": 0.8921337486439799
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9186190893650178,
+            0.7170789889201107,
+            0.863450314408735
+          ],
+          "mean_f1_macro": 0.8330494642312879
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.931133724731806,
+            0.7187537434213521,
+            0.8575289624877717
+          ],
+          "mean_f1_macro": 0.8358054768803099
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9135443616171192,
+            0.7553342167341243,
+            0.8667626072498225
+          ],
+          "mean_f1_macro": 0.8452137285336887
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.914049594385073,
+            0.7606732478710218,
+            0.8818414050964792
+          ],
+          "mean_f1_macro": 0.852188082450858
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7855113109771925,
+            0.7100015338883244,
+            0.7372227375169548
+          ],
+          "mean_f1_macro": 0.7442451941274905
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.856041412714014,
+            0.732741715840381,
+            0.6567514719948621
+          ],
+          "mean_f1_macro": 0.7485115335164191
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9547884399164102,
+            0.773837493265671,
+            0.8710467753749862
+          ],
+          "mean_f1_macro": 0.8665575695190224
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9471666188658886,
+            0.7569470399961227,
+            0.9115894053743997
+          ],
+          "mean_f1_macro": 0.8719010214121369
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 6,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10
+        ],
+        "windows": 4724,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 395,
+          "7": 412,
+          "8": 408,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 133
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          6
+        ],
+        "windows": 489,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 33,
+          "7": 31,
+          "8": 35,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 14
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              7,
+              8,
+              10
+            ],
+            "windows": 3130,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 255,
+              "7": 273,
+              "8": 265,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              9
+            ],
+            "windows": 1594,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 140,
+              "7": 139,
+              "8": 143,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              7,
+              9,
+              10
+            ],
+            "windows": 3164,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 272,
+              "7": 273,
+              "8": 281,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              5,
+              8
+            ],
+            "windows": 1560,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 123,
+              "7": 139,
+              "8": 127,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              5,
+              8,
+              9
+            ],
+            "windows": 3154,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 263,
+              "7": 278,
+              "8": 270,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              7,
+              10
+            ],
+            "windows": 1570,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 132,
+              "7": 134,
+              "8": 138,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8404652170023171,
+            0.6693257580218225,
+            0.7669743980334366
+          ],
+          "mean_f1_macro": 0.758921791019192
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8348539850285831,
+            0.6626048754533495,
+            0.7573489133237244
+          ],
+          "mean_f1_macro": 0.7516025912685523
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.9635540746662614,
+            0.7671013726006316,
+            0.9653411687819274
+          ],
+          "mean_f1_macro": 0.8986655386829402
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.9593773404154761,
+            0.77344721044033,
+            0.9665574729050355
+          ],
+          "mean_f1_macro": 0.8997940079202805
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.8447365515788272,
+            0.7710321017799716,
+            0.6958283545918299
+          ],
+          "mean_f1_macro": 0.7705323359835429
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8460435766103901,
+            0.7722089949777797,
+            0.7039023055779685
+          ],
+          "mean_f1_macro": 0.7740516257220461
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.972172684852045,
+            0.8380984739151575,
+            0.9625342534064566
+          ],
+          "mean_f1_macro": 0.9242684707245531
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9722207472664518,
+            0.8507318977479529,
+            0.9631438678355079
+          ],
+          "mean_f1_macro": 0.9286988376166375
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9126734984892978,
+            0.8035231910038738,
+            0.8905674932292147
+          ],
+          "mean_f1_macro": 0.8689213942407954
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9186868443669646,
+            0.8076185975097737,
+            0.8698184011896756
+          ],
+          "mean_f1_macro": 0.8653746143554714
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.923450035124553,
+            0.8114924694821503,
+            0.8688845827553547
+          ],
+          "mean_f1_macro": 0.8679423624540193
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9301673306058301,
+            0.8167628089991835,
+            0.8844941071284232
+          ],
+          "mean_f1_macro": 0.8771414155778122
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7912985919212234,
+            0.7301945458366111,
+            0.7838817306025905
+          ],
+          "mean_f1_macro": 0.7684582894534749
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.8378215930238998,
+            0.7650999673604221,
+            0.6244739549203427
+          ],
+          "mean_f1_macro": 0.7424651717682216
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9370657670666671,
+            0.7716190292347932,
+            0.8740916035217022
+          ],
+          "mean_f1_macro": 0.8609254666077208
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9753079730641674,
+            0.7755862830406723,
+            0.9394423284636595
+          ],
+          "mean_f1_macro": 0.896778861522833
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 7,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10
+        ],
+        "windows": 4696,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 422,
+          "6": 381,
+          "7": 401,
+          "8": 400,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          7
+        ],
+        "windows": 517,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 41,
+          "6": 47,
+          "7": 42,
+          "8": 43,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              6,
+              8,
+              10
+            ],
+            "windows": 3102,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 241,
+              "7": 262,
+              "8": 257,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              9
+            ],
+            "windows": 1594,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 140,
+              "7": 139,
+              "8": 143,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              6,
+              9,
+              10
+            ],
+            "windows": 3136,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 282,
+              "6": 258,
+              "7": 262,
+              "8": 273,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              5,
+              8
+            ],
+            "windows": 1560,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 123,
+              "7": 139,
+              "8": 127,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              5,
+              8,
+              9
+            ],
+            "windows": 3154,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 263,
+              "7": 278,
+              "8": 270,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              6,
+              10
+            ],
+            "windows": 1542,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 118,
+              "7": 123,
+              "8": 130,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8880691066084827,
+            0.7968530514370183,
+            0.7107242813215251
+          ],
+          "mean_f1_macro": 0.798548813122342
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8762066045864257,
+            0.7862008549996865,
+            0.7019568025173414
+          ],
+          "mean_f1_macro": 0.7881214207011512
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.9514324988253834,
+            0.8827366751651259,
+            0.9058078366235881
+          ],
+          "mean_f1_macro": 0.9133256702046991
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.9443362672623105,
+            0.8841433542489271,
+            0.9154333118184517
+          ],
+          "mean_f1_macro": 0.9146376444432297
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.802867171742396,
+            0.7954758461340988,
+            0.6895048607174985
+          ],
+          "mean_f1_macro": 0.7626159595313311
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.7824221408907869,
+            0.8130664494497419,
+            0.7064288381865397
+          ],
+          "mean_f1_macro": 0.7673058095090228
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9579875468786402,
+            0.9205299827219995,
+            0.9301309011884884
+          ],
+          "mean_f1_macro": 0.9362161435963761
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.959752061448181,
+            0.9346802332723599,
+            0.9308596566746564
+          ],
+          "mean_f1_macro": 0.9417639837983991
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9326133292840262,
+            0.906979183782933,
+            0.8588667472715761
+          ],
+          "mean_f1_macro": 0.8994864201128451
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9398397584515235,
+            0.9087499533201949,
+            0.8424213096862512
+          ],
+          "mean_f1_macro": 0.8970036738193232
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9183883395303433,
+            0.8684895035257346,
+            0.8706697839302153
+          ],
+          "mean_f1_macro": 0.8858492089954311
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9317467800292466,
+            0.8721132067144991,
+            0.8953793352316151
+          ],
+          "mean_f1_macro": 0.8997464406584536
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7713003624147934,
+            0.7337398519162752,
+            0.8028840869864818
+          ],
+          "mean_f1_macro": 0.7693081004391834
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.8234193133315673,
+            0.7772334182372386,
+            0.7206753686100855
+          ],
+          "mean_f1_macro": 0.7737760333929637
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9651097202385962,
+            0.8393720376409227,
+            0.8914014872524404
+          ],
+          "mean_f1_macro": 0.8986277483773198
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9540193841637384,
+            0.8624960268614509,
+            0.9329889196825526
+          ],
+          "mean_f1_macro": 0.9165014435692473
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 8,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "windows": 4708,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 417,
+          "6": 396,
+          "7": 398,
+          "8": 404,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 133
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          8
+        ],
+        "windows": 505,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 46,
+          "6": 32,
+          "7": 45,
+          "8": 39,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 14
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              6,
+              7,
+              10
+            ],
+            "windows": 3114,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 256,
+              "7": 259,
+              "8": 261,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              9
+            ],
+            "windows": 1594,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 140,
+              "7": 139,
+              "8": 143,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              6,
+              9,
+              10
+            ],
+            "windows": 3136,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 282,
+              "6": 258,
+              "7": 262,
+              "8": 273,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              5,
+              7
+            ],
+            "windows": 1572,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 138,
+              "7": 136,
+              "8": 131,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              5,
+              7,
+              9
+            ],
+            "windows": 3166,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 278,
+              "7": 275,
+              "8": 274,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 90
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              6,
+              10
+            ],
+            "windows": 1542,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 118,
+              "7": 123,
+              "8": 130,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8950062968172984,
+            0.8304752914538515,
+            0.7638222336539924
+          ],
+          "mean_f1_macro": 0.8297679406417141
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8852227198686863,
+            0.8804629125223165,
+            0.7603817339635861
+          ],
+          "mean_f1_macro": 0.8420224554515295
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.9414216460371124,
+            0.9331159591183975,
+            0.8895531636719866
+          ],
+          "mean_f1_macro": 0.9213635896091654
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.9237167516292732,
+            0.930785366340956,
+            0.8806200430971155
+          ],
+          "mean_f1_macro": 0.9117073870224482
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.8239035105921569,
+            0.8176996679551115,
+            0.7764311323409966
+          ],
+          "mean_f1_macro": 0.806011436962755
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8274763488563724,
+            0.8302364790571812,
+            0.7952267071666471
+          ],
+          "mean_f1_macro": 0.8176465116934003
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9246943955403534,
+            0.9625104762286795,
+            0.9023924692421789
+          ],
+          "mean_f1_macro": 0.9298657803370706
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.925270791161868,
+            0.9729043499348337,
+            0.9026213034768685
+          ],
+          "mean_f1_macro": 0.9335988148578567
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9218155542501546,
+            0.9358696506266004,
+            0.8111428430567784
+          ],
+          "mean_f1_macro": 0.8896093493111779
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9292587115124399,
+            0.9358349206665103,
+            0.8110587986794672
+          ],
+          "mean_f1_macro": 0.8920508102861392
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.9138220018835154,
+            0.9151218433800469,
+            0.8353009708590018
+          ],
+          "mean_f1_macro": 0.8880816053741881
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9271683102911593,
+            0.9214523159667444,
+            0.8797229644140317
+          ],
+          "mean_f1_macro": 0.9094478635573119
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7805933341778676,
+            0.782621022460181,
+            0.7955148986273858
+          ],
+          "mean_f1_macro": 0.7862430850884782
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.8004685572907917,
+            0.7768318224710402,
+            0.7661770252769494
+          ],
+          "mean_f1_macro": 0.7811591350129271
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.949235370950872,
+            0.8584369863413989,
+            0.8885800046372371
+          ],
+          "mean_f1_macro": 0.898750787309836
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9336662510690122,
+            0.9312640215247755,
+            0.8961033203181468
+          ],
+          "mean_f1_macro": 0.9203445309706448
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 9,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        "windows": 4691,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 385,
+          "7": 400,
+          "8": 398,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 132
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          9
+        ],
+        "windows": 522,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 43,
+          "7": 43,
+          "8": 45,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 15
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              6,
+              7,
+              10
+            ],
+            "windows": 3114,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 256,
+              "7": 259,
+              "8": 261,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              8
+            ],
+            "windows": 1577,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 129,
+              "7": 141,
+              "8": 137,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              6,
+              8,
+              10
+            ],
+            "windows": 3119,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 247,
+              "7": 264,
+              "8": 267,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 87
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              5,
+              7
+            ],
+            "windows": 1572,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 138,
+              "7": 136,
+              "8": 131,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              5,
+              7,
+              8
+            ],
+            "windows": 3149,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 267,
+              "7": 277,
+              "8": 268,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              6,
+              10
+            ],
+            "windows": 1542,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 118,
+              "7": 123,
+              "8": 130,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 43
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.779338805463247,
+            0.8237950683578444,
+            0.7277077298513905
+          ],
+          "mean_f1_macro": 0.7769472012241607
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.7505229651849227,
+            0.85092294226892,
+            0.7043790415102724
+          ],
+          "mean_f1_macro": 0.7686083163213717
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8590110178202841,
+            0.9733246305139686,
+            0.8960354039129784
+          ],
+          "mean_f1_macro": 0.9094570174157437
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8417384457971216,
+            0.9789024197403532,
+            0.886679445677116
+          ],
+          "mean_f1_macro": 0.9024401037381969
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.7833842638285936,
+            0.8387771825507966,
+            0.7353958409783523
+          ],
+          "mean_f1_macro": 0.7858524291192475
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.7849417819259273,
+            0.8100497086244133,
+            0.7667480050529853
+          ],
+          "mean_f1_macro": 0.787246498534442
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.8979353451629536,
+            0.9958224977641188,
+            0.9225643285667484
+          ],
+          "mean_f1_macro": 0.9387740571646069
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9003552491074688,
+            0.9952308515261462,
+            0.9238223496000489
+          ],
+          "mean_f1_macro": 0.9398028167445546
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8747593814324867,
+            0.9444201435617363,
+            0.8453892700166753
+          ],
+          "mean_f1_macro": 0.888189598336966
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8869753512689087,
+            0.9450057091560383,
+            0.8464391312614294
+          ],
+          "mean_f1_macro": 0.8928067305621256
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8773713283045089,
+            0.955733380925814,
+            0.8729884424151134
+          ],
+          "mean_f1_macro": 0.9020310505484788
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8821675534155956,
+            0.9632568022498136,
+            0.904550695710137
+          ],
+          "mean_f1_macro": 0.9166583504585154
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.760943298116476,
+            0.8247126870635623,
+            0.7326097787174595
+          ],
+          "mean_f1_macro": 0.7727552546324992
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.7156715026331931,
+            0.8389313921575017,
+            0.7508990549420046
+          ],
+          "mean_f1_macro": 0.7685006499108998
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9282582318218172,
+            0.9481065974124882,
+            0.9185611295381163
+          ],
+          "mean_f1_macro": 0.9316419862574739
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.9018526810207433,
+            0.9851231045216097,
+            0.9157634249024783
+          ],
+          "mean_f1_macro": 0.9342464034816104
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    },
+    {
+      "held_out_subject": 10,
+      "outer_train": {
+        "subjects": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "windows": 4702,
+        "class_counts": {
+          "1": 423,
+          "2": 423,
+          "3": 423,
+          "4": 423,
+          "5": 416,
+          "6": 391,
+          "7": 402,
+          "8": 400,
+          "9": 422,
+          "10": 423,
+          "11": 423,
+          "12": 133
+        }
+      },
+      "outer_test": {
+        "subjects": [
+          10
+        ],
+        "windows": 511,
+        "class_counts": {
+          "1": 47,
+          "2": 47,
+          "3": 47,
+          "4": 47,
+          "5": 47,
+          "6": 37,
+          "7": 41,
+          "8": 43,
+          "9": 47,
+          "10": 47,
+          "11": 47,
+          "12": 14
+        }
+      },
+      "inner": [
+        {
+          "train": {
+            "subjects": [
+              2,
+              3,
+              5,
+              6,
+              7,
+              9
+            ],
+            "windows": 3125,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 276,
+              "6": 262,
+              "7": 261,
+              "8": 263,
+              "9": 282,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              1,
+              4,
+              8
+            ],
+            "windows": 1577,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 140,
+              "6": 129,
+              "7": 141,
+              "8": 137,
+              "9": 140,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              2,
+              4,
+              6,
+              8,
+              9
+            ],
+            "windows": 3130,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 281,
+              "6": 253,
+              "7": 266,
+              "8": 269,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 88
+            }
+          },
+          "validation": {
+            "subjects": [
+              3,
+              5,
+              7
+            ],
+            "windows": 1572,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 135,
+              "6": 138,
+              "7": 136,
+              "8": 131,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 45
+            }
+          }
+        },
+        {
+          "train": {
+            "subjects": [
+              1,
+              3,
+              4,
+              5,
+              7,
+              8
+            ],
+            "windows": 3149,
+            "class_counts": {
+              "1": 282,
+              "2": 282,
+              "3": 282,
+              "4": 282,
+              "5": 275,
+              "6": 267,
+              "7": 277,
+              "8": 268,
+              "9": 281,
+              "10": 282,
+              "11": 282,
+              "12": 89
+            }
+          },
+          "validation": {
+            "subjects": [
+              2,
+              6,
+              9
+            ],
+            "windows": 1553,
+            "class_counts": {
+              "1": 141,
+              "2": 141,
+              "3": 141,
+              "4": 141,
+              "5": 141,
+              "6": 124,
+              "7": 125,
+              "8": 132,
+              "9": 141,
+              "10": 141,
+              "11": 141,
+              "12": 44
+            }
+          }
+        }
+      ],
+      "inner_scores": [
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.7562948802217271,
+            0.7767352542993032,
+            0.6970752685365958
+          ],
+          "mean_f1_macro": 0.7433684676858755
+        },
+        {
+          "model": "KNN",
+          "feature_set": "basic",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.7297352443178164,
+            0.8566854790692201,
+            0.6648714761608048
+          ],
+          "mean_f1_macro": 0.7504307331826138
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          },
+          "fold_f1_macro": [
+            0.8436193120325148,
+            0.9329401294869747,
+            0.8800222177194549
+          ],
+          "mean_f1_macro": 0.8855272197463148
+        },
+        {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 7
+          },
+          "fold_f1_macro": [
+            0.8254184708585539,
+            0.9491891404810295,
+            0.8720546375119799
+          ],
+          "mean_f1_macro": 0.8822207496171878
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.7672514269145223,
+            0.8340768491926672,
+            0.7353325857438912
+          ],
+          "mean_f1_macro": 0.7788869539503603
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "basic",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.7651477450470523,
+            0.8371928954680931,
+            0.7709643458046481
+          ],
+          "mean_f1_macro": 0.7911016621065978
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 220,
+            "l2": 0.001
+          },
+          "fold_f1_macro": [
+            0.9148391331462342,
+            0.9898117221139296,
+            0.9218511027200734
+          ],
+          "mean_f1_macro": 0.9421673193267458
+        },
+        {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9160474259417007,
+            0.9886092917794397,
+            0.9236860258594949
+          ],
+          "mean_f1_macro": 0.9427809145268785
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8971307191358094,
+            0.9522666492037679,
+            0.868597148014928
+          ],
+          "mean_f1_macro": 0.9059981721181685
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "basic",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.8990745291643217,
+            0.9522666492037679,
+            0.8709174704480541
+          ],
+          "mean_f1_macro": 0.9074195496053813
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 1e-09
+          },
+          "fold_f1_macro": [
+            0.8975558463176162,
+            0.9557935285230563,
+            0.8802744106480772
+          ],
+          "mean_f1_macro": 0.9112079284962499
+        },
+        {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          },
+          "fold_f1_macro": [
+            0.9155863997433437,
+            0.9633163486883148,
+            0.9033738975320665
+          ],
+          "mean_f1_macro": 0.927425548654575
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.7699686925413666,
+            0.7946912737763002,
+            0.7126097651286036
+          ],
+          "mean_f1_macro": 0.7590899104820901
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "basic",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.7530930850479683,
+            0.8455553378300427,
+            0.7700535591227998
+          ],
+          "mean_f1_macro": 0.7895673273336037
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              48
+            ],
+            "n_epochs": 20
+          },
+          "fold_f1_macro": [
+            0.9231668645519994,
+            0.9120338915189556,
+            0.9178823336909515
+          ],
+          "mean_f1_macro": 0.9176943632539688
+        },
+        {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          },
+          "fold_f1_macro": [
+            0.914703365374419,
+            0.9809378550257416,
+            0.9116403807388508
+          ],
+          "mean_f1_macro": 0.9357605337130038
+        }
+      ],
+      "selected_pipeline": {
+        "model": "Logistic Regression",
+        "feature_set": "full",
+        "parameters": {
+          "lr": 0.35,
+          "n_iters": 350,
+          "l2": 0.0001
+        }
+      },
+      "selected_by_model": {
+        "KNN": {
+          "model": "KNN",
+          "feature_set": "full",
+          "parameters": {
+            "k": 1
+          }
+        },
+        "Logistic Regression": {
+          "model": "Logistic Regression",
+          "feature_set": "full",
+          "parameters": {
+            "lr": 0.35,
+            "n_iters": 350,
+            "l2": 0.0001
+          }
+        },
+        "Naive Bayes": {
+          "model": "Naive Bayes",
+          "feature_set": "full",
+          "parameters": {
+            "var_smoothing": 0.0001
+          }
+        },
+        "Neural Network": {
+          "model": "Neural Network",
+          "feature_set": "full",
+          "parameters": {
+            "hidden_layers": [
+              64,
+              32
+            ],
+            "n_epochs": 30
+          }
+        }
+      }
+    }
+  ],
+  "timings_seconds": {
+    "feature_build": {
+      "median": 5.270537699921988,
+      "iqr": [
+        4.99647259991616,
+        5.3963410499854945
+      ],
+      "samples": 3,
+      "observations": [
+        5.270537699921988,
+        5.522144400049001,
+        4.722407499910332
+      ]
+    },
+    "nested_evaluation": 120.28743120003492
+  },
+  "environment": {
+    "python": "3.12.0",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "logical_cpus": 16,
+    "numpy": "1.26.2",
+    "pandas": "2.1.3",
+    "threadpoolctl": "3.2.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "version": "0.3.23.dev",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "outputs": {
+    "outer_folds.csv": "24c932aad1c0869fd56598142173abbe7898a5727b493d25291eac2dd89b13ef",
+    "summary.json": "0068dedc4f1f0c61212660d69e456fa190cc5a59b96c44e744f543d5a1f60e48",
+    "confusion_matrices.json": "fb123b4ae75ba21b1b34ec1b6b5e47e0b0f1dacd66e13fff1fb0b3a6ba74a552",
+    "benchmark_results.md": "c34bb5a70256a28694ff7bceb41e91ce09286fa8ef1ef4fac264049df8313b9c"
+  }
+}
